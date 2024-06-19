@@ -1,0 +1,71 @@
+.accordion__header {
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: flex-start; /* Ajustado para alinhar à esquerda */
+    align-items: center;
+    border: 1px solid var(--primary-border-color);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  }
+  
+  .accordion__header .accordion__logo {
+    width: 40px; /* Largura da imagem */
+    height: auto; /* Altura automática mantendo a proporção */
+    margin-right: 10px; /* Espaço à direita da imagem */
+  }
+  
+  .accordion__header span {
+    color: var(--title-color);
+    margin-right: auto; /* Empurra o ícone e o span para a direita */
+  }
+  
+  .accordion__header.start {
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+  
+  .accordion__header.end {
+    border-radius: 0 0 0.25rem 0.25rem;
+  }
+  
+  .accordion__item.active .accordion__header {
+    background: var(--secondary-bg-color);
+  }
+  
+  .accordion__body {
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    border: 1px solid var(--primary-border-color);
+    border-top: none; /* Remove a borda superior do corpo quando fechado */
+  }
+  
+  .accordion__item.active .accordion__body {
+    display: flex;
+  }
+  
+  .accordion__list {
+    list-style-type: disc; /* Define o tipo de marcador como disco */
+    padding-left: 20px; /* Recuo à esquerda para os itens da lista */
+    position: relative; /* Necessário para posicionar o marcador personalizado */
+  }
+  .accordion__list li {
+    position: relative; /* Necessário para posicionar o marcador personalizado */
+    padding-left: 30px; /* Espaço para o marcador personalizado */
+    padding-bottom: 5px; /* Espaçamento na parte inferior de cada item da lista */
+  
+  }
+  
+  .accordion__list li::before {
+    content: "\2022"; /* Código Unicode para um marcador de bola (ponto) */
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    color: #0cbe7b; /* Cor do marcador personalizado, se desejar alterar */
+  }
+  
